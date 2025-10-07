@@ -1,0 +1,100 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background: black;
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+input:hover {
+  cursor: pointer;
+}
+
+#intro-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: bold;
+  z-index: 2;
+  color: #fff0f5;
+  text-shadow: 0 0 10px #ff70cf;
+  animation: glow 2s ease-in-out infinite alternate;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ff70cf, 0 0 10px #ff70cf;
+  }
+  to {
+    text-shadow: 0 0 15px #ff70cf, 0 0 25px #ff70cf;
+  }
+}
+
+#dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #f0c3f1;
+  border-radius: 20px;
+  padding: 30px;
+  z-index: 10;
+  width: 320px;
+  box-shadow: 0 0 20px #fbb6ec;
+  text-align: center;
+  animation: popUp 0.3s ease;
+  color: black;
+}
+
+@keyframes popUp {
+  from {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+#dialog input,
+#dialog textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #e7a0d4;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+#dialog button {
+  background-color: #fbb6ec;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#dialog button:hover {
+  background-color: #ff80d5;
+}
+
+.hidden {
+  display: none;
+}
